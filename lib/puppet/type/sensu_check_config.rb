@@ -46,6 +46,10 @@ Puppet::Type.newtype(:sensu_check_config) do
     desc ""
   end
 
+  newproperty(:occurrences) do
+    desc ""
+  end
+
   autorequire(:package) do
     ['sensu']
   end
