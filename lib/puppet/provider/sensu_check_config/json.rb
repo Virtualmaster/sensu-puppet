@@ -69,4 +69,13 @@ Puppet::Type.type(:sensu_check_config).provide(:json) do
   def subscribers=(value)
     conf['checks'][resource[:realname]]['subscribers'] = value
   end
+
+  def occurrences
+    conf['checks'][resource[:realname]]['occurrences'].to_s
+  end
+
+  def occurrences(value)
+    conf['checks'][resource[:realname]]['occurrences'] = value.to_i
+  end
 end
+
