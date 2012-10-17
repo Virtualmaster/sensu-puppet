@@ -2,6 +2,7 @@ define sensu::check(
                     $command,
                     $handlers    = [],
                     $interval    = '60',
+                    $occurrences = '1',
                     $subscribers = []
                     ) {
 
@@ -11,6 +12,7 @@ define sensu::check(
     handlers    => $handlers,
     interval    => $interval,
     subscribers => $subscribers,
+    occurrences => $occurrences,
   }
 
   sensu_check_config { $name:
@@ -19,5 +21,6 @@ define sensu::check(
     handlers    => $handlers,
     interval    => $interval,
     subscribers => $subscribers,
+    occurrences => $occurrences,
   }
 }
